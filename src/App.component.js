@@ -51,9 +51,9 @@ class App extends Component {
     const startTimeData = this.convertTimeToSeconds(startTime.split(':'));
     const endTimeData = this.convertTimeToSeconds(endTime.split(':'));
 
+    clearInterval(this.countDownInterval);
     if (startTimeData > endTimeData) {
       clearState();
-      clearInterval(this.countDownInterval);
       Modal.error({
         title: 'Error input',
         content: 'End time is not later than start time!',
